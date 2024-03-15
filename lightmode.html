@@ -82,6 +82,49 @@
     a {
         color: black !important;
     }
+    .box {
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #ececec;
+  transition: background-color 0.3s;
+}
+
+.box:hover {
+  background-color: #E1E1E1;
+}
+.btn-github {
+  color: #8b8080;
+  border: 1px solid #928686;
+  background-color: #928686;
+}
+
+.btn-github:hover {
+  background-color: #776d6d;
+  color: white;
+}
+
+.btn-modrinth {
+  color: rgb(35, 141, 35);
+  border: 1px solid rgb(35, 141, 35);
+  background-color: #238d23;
+}
+
+.btn-modrinth:hover {
+  background-color: rgb(31, 116, 31);
+  color: white;
+}
+
+.btn-scratch {
+  color: #bd7b19;
+  border: 1px solid #bd7b19;
+  background-color: #bd7b19;
+}
+
+.btn-scratch:hover {
+  background-color: #9f6918;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -102,11 +145,11 @@
   </script>
   <div class="container">
     <h1>Welcome to my Website</h1>
-    <img class="profile-picture" src="images/superzekes-new.png" alt="Profile Picture">
+    <img class="profile-picture" src="images/profile.png" alt="Profile Picture">
     <p>I'm SuperZekes a geek that loves coding, video games, and everything Star Wars.</p>
-    <a href="https://github.com/SuperZekes" target="_blank" class="btn btn-dark text-light" style="color: white;">GitHub</a>
-    <a href="https://modrinth.com/user/SuperZekes" target="_blank" class="btn btn-success text-light">Modrinth</a>
-    <a href="https://scratch.mit.edu/users/787566/" target="_blank" class="btn btn-warning">Scratch</a>
+    <a class="btn btn-github" href="https://github.com/SuperZekes" target="_blank">GitHub</a>
+    <a class="btn btn-modrinth" href="https://modrinth.com/user/SuperZekes" target="_blank">Modrinth</a>
+    <a class="btn btn-scratch" href="https://scratch.mit.edu/users/787566/" target="_blank">Scratch</a>
 
     <p> </p>
     <p>Here are some of the projects i've worked on.</p>

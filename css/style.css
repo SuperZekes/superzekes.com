@@ -62,3 +62,52 @@ text-align: right;
 ::selection {
   background-color: rgb(121, 22, 22);
 }
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: sm;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.btn-github {
+  color: #8b8080;
+  border: 1px solid #928686;
+}
+
+.btn-github:hover {
+  background-color: #928686;
+  color: white;
+}
+
+.btn-modrinth {
+  color: rgb(35, 141, 35);
+  border: 1px solid rgb(35, 141, 35);
+}
+
+.btn-modrinth:hover {
+  background-color: rgb(35, 141, 35);
+  color: white;
+}
+
+.btn-scratch {
+  color: #bd7b19;
+  border: 1px solid #bd7b19;
+}
+
+.btn-scratch:hover {
+  background-color: #bd7b19;
+  color: white;
+}
+.box {
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #131111;
+  transition: background-color 0.3s;
+}
+
+.box:hover {
+  background-color: #222222;
+}
