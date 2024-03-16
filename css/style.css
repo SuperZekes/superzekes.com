@@ -111,26 +111,10 @@ text-align: right;
 .box:hover {
   background-color: #202020;
 }
-.courier-prime-regular {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
+
+.lexend-deca-uniquifier {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
-}
-
-.courier-prime-bold {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.courier-prime-regular-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.courier-prime-bold-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: italic;
 }
