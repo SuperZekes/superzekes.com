@@ -1,98 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SuperZekes' Site</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <meta property="og:title" content="SuperZekes' Site">
-  <meta property="og:description" content="Home Page">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://superzekes.com/images/profile.png">
-  <meta property="og:image" content="https://superzekes.com/images/profile.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperZekes' Site</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="images/profile.png" type="image/png">
 </head>
-<body class="lexend-deca-uniquifier">
-  <div id="clock"></div>
+<body class="m-0 font-sans bg-gray-100 text-black transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-white">
+    <header class="bg-white dark:bg-gray-800 py-5 px-4 flex flex-col items-center shadow-md">
+        <div class="flex items-center gap-4">
+            <img src="images/profile.png" alt="Profile Picture" class="w-16 h-16 rounded-full object-cover shadow-md">
+            <div>
+                <h1 class="text-2xl m-0">SuperZekes</h1>
+                <p class="text-sm mt-1 text-gray-600 dark:text-gray-300">A passionate developer and content creator.</p>
+            </div>
+        </div>
+        <nav class="flex gap-4 mt-4">
+            <a href="https://github.com/SuperZekes" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-gray-900 hover:text-white dark:hover:bg-gray-900 dark:hover:text-white" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M12 2a10 10 0 00-3.16 19.48c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.17-1.12-1.48-1.12-1.48-.91-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.91 1.55 2.38 1.1 2.96.84.09-.66.36-1.1.65-1.35-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 7.2c.85.01 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.67-4.59 4.92.37.32.69.94.69 1.9v2.82c0 .26.18.57.69.47A10 10 0 0012 2z"/>
+                </svg>
+                GitHub
+            </a>
+            <a href="https://www.youtube.com/@SuperZekesYT" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M23.5 6.6a3 3 0 00-2.1-2.1C19.7 4 12 4 12 4s-7.7 0-9.4.5A3 3 0 00.5 6.6 31 31 0 000 12a31 31 0 00.5 5.4 3 3 0 002.1 2.1c1.7.5 9.4.5 9.4.5s7.7 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.4zm-14 8.9V8.5l6.5 3.5-6.5 3.5z"/>
+                </svg>
+                YouTube
+            </a>
+            <a href="https://modrinth.com/user/SuperZekes" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-green-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white" target="_blank">
+                <img src="images/modrinth-icon.png" alt="Modrinth Icon" class="w-5 h-5 object-contain" onerror="this.style.display='none';">
+                Modrinth
+            </a>
+        </nav>
+    </header>
 
-  <script src="js/script.js" type="text/javascript"></script>
+    <section class="projects flex justify-around py-10">
+        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
+            <img src="images/superzekes-pvp-pack.png" alt="Project 1" class="w-full h-48 object-contain mx-auto mb-4">
+            <h2 class="text-xl mb-2">SuperZekes's PvP Pack</h2>
+            <p class="text-lg mb-4">A Minecraft modpack designed to be used with PvP - it also works well for multiplayer server use. Made for players and content creators.</p>
+            <div class="flex justify-center gap-2">
+                <a href="https://modrinth.com/modpack/superzekes-pvp" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Modrinth</a>
+                <a href="https://github.com/SuperZekes/SuperZekes-PvP-Pack" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
+            </div>
+        </div>
+        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
+            <img src="images/sodibanana.png" alt="Project 2" class="w-full h-48 object-contain mx-auto mb-4">
+            <h2 class="text-xl mb-2">SodiBanana</h2>
+            <p class="text-lg mb-4">A modern optimization Modpack with a few QoL improvements and focus on stability.</p>
+            <div class="flex justify-center gap-2">
+                <a href="https://modrinth.com/modpack/sodibanana" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Modrinth</a>
+                <a href="https://github.com/SuperZekes/SodiBanana" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
+            </div>
+        </div>
+        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
+            <img src="images/sinacraft.png" alt="Project 3" class="w-full h-48 object-contain mx-auto mb-4">
+            <h2 class="text-xl mb-2">SinaCraft</h2>
+            <p class="text-lg mb-4">SinaCraft(Sena-Craft) is an open source voxel game based on Minecraft written in Python using the Ursina Engine.</p>
+            <div class="flex justify-center gap-2">
+                <a href="https://superzekes.itch.io/sinacraft" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Itch.io</a>
+                <a href="https://github.com/SuperZekes/SinaCraft" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
+            </div>
+        </div>
+    </section>
 
-
-  
-  <a href="~">
-    <img id="togglelightmode" src="images/sun-solid.svg" alt="Light Mode">
-  </a>
-  </script>
-  <div class="container">
-    <h1>Welcome to my Website</h1>
-    <img class="profile-picture" src="images/profile.png" alt="Profile Picture">
-    <p>I'm SuperZekes a geek that loves coding, video games, and everything Star Wars.</p>
-    <a class="btn btn-github" href="https://github.com/SuperZekes" target="_blank">GitHub</a>
-    <a class="btn btn-modrinth" href="https://modrinth.com/user/SuperZekes" target="_blank">Modrinth</a>
-    <a class="btn btn-scratch" href="https://scratch.mit.edu/users/787566/" target="_blank">Scratch</a>
-    <p> </p>
-    <p>Here are some of the projects I've worked on.</p>
-
-    <div class="box" style="border-radius: 10px;">
-      <a href="https://superzekes.com/projects/SuperZekes-PvP-Pack/">
-        <img src="images/superzekes-pvp-pack.png" alt="Project 1">
-      </a>
-      <a href="https://superzekes.com/projects/SuperZekes-PvP-Pack/">SuperZekes's PvP Pack</a>
-      <p>A Minecraft modpack designed to be used with PvP - it also works well for multiplayer server use. Made for players and content creators.</p>
-    </div>
-    
-    <div class="box" style="border-radius: 10px;">
-      <a href="https://superzekes.com/projects/SodiBanana/">
-        <img src="images/sodibanana.png" alt="Project 2">
-      </a>
-      <a href="https://superzekes.com/projects/SodiBanana/">SodiBanana</a>
-      <p>A modern optimization Modpack with a few QoL improvements and focus on stability.</p>
-    </div>
-
-    <div class="box" style="border-radius: 10px;">
-      <a target="_blank" href="https://modrinth.com/mod/modrinth-logo-mod">
-        <img src="images/modrinth-logo-mod.png" alt="Project 3">
-      </a>
-      <a target="_blank" href="https://modrinth.com/mod/modrinth-logo-mod">Modrinth Logo Mod</a>
-      <p>A simple mod that adds the Modrinth logo as an item in Minecraft!</p>
-    </div>
-
-    <div class="box" style="border-radius: 10px;">
-      <a target="_blank" href="https://github.com/SuperZekes/PyMath/">
-        <img src="images/PyMath_Logo.png" alt="Project 4">
-      </a>
-      <a target="_blank" href="https://github.com/SuperZekes/PyMath/">PyMath</a>
-      <p>A customizable Math Quiz great for learning or just practice.</p>
-    </div>
-
-    <div class="box" style="border-radius: 10px;">
-      <a target="_blank" href="https://github.com/SuperZekes/PyWordle/">
-        <img src="images/PyWordle.png" alt="Project 5">
-      </a>
-      <a target="_blank" href="https://github.com/SuperZekes/PyWordle/">PyWordle</a>
-      <p>A basic version of the game Wordle made in Python.</p>
-    </div>
-    
-    <div class="box" style="border-radius: 10px;">
-      <a target="_blank" href="https://emojigrab.superzekes.com/">
-        <img src="images/emojigrab.png" alt="Project 6">
-      </a>
-      <a target="_blank" href="https://emojigrab.superzekes.com/">EmojiGrab</a>
-      <p>A website made for copying and pasting emojis.</p>
-    </div>
-    
-    <p>Thank you for visiting my website! Feel free to explore more of my projects and stay tuned for updates.</p>
-    <p>Goodbye! 👋🏻</p>
-    <button class="btn btn-dark" onclick="location.assign('blog.html');">Explore My Blog</button>
-  </div>
+    <footer class="text-center py-5 bg-white dark:bg-gray-800 shadow-md">
+        <p>&copy; 2024 SuperZekes. All rights reserved.</p>
+    </footer>
 </body>
 </html>
