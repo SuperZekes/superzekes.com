@@ -4,77 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperZekes' Site</title>
-    <link rel="stylesheet" href="src/output.css">
-    <link rel="icon" href="images/profile.png" type="image/png">
+    <!-- Link to external CSS files -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- Chart.js for Pie Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body class="m-0 font-sans bg-gray-100 text-black transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-white">
-    <header class="bg-white dark:bg-gray-800 py-5 px-4 flex flex-col items-center shadow-md">
-        <div class="flex items-center gap-4">
-            <img src="images/profile.png" alt="Profile Picture" class="w-16 h-16 rounded-full object-cover shadow-md">
-            <div>
-                <h1 class="text-2xl m-0">SuperZekes</h1>
-                <p class="text-sm mt-1 text-gray-600 dark:text-gray-300">A passionate developer and content creator.</p>
-            </div>
-        </div>
-        <nav class="flex gap-4 mt-4">
-            <a href="https://github.com/SuperZekes" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-gray-900 hover:text-white dark:hover:bg-gray-900 dark:hover:text-white" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path d="M12 2a10 10 0 00-3.16 19.48c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.17-1.12-1.48-1.12-1.48-.91-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.91 1.55 2.38 1.1 2.96.84.09-.66.36-1.1.65-1.35-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 7.2c.85.01 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.67-4.59 4.92.37.32.69.94.69 1.9v2.82c0 .26.18.57.69.47A10 10 0 0012 2z"/>
-                </svg>
-                GitHub
-            </a>
-            <a href="https://www.youtube.com/@SuperZekesYT" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path d="M23.5 6.6a3 3 0 00-2.1-2.1C19.7 4 12 4 12 4s-7.7 0-9.4.5A3 3 0 00.5 6.6 31 31 0 000 12a31 31 0 00.5 5.4 3 3 0 002.1 2.1c1.7.5 9.4.5 9.4.5s7.7 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.4zm-14 8.9V8.5l6.5 3.5-6.5 3.5z"/>
-                </svg>
-                YouTube
-            </a>
-            <a href="https://modrinth.com/user/SuperZekes" class="flex items-center gap-2 bg-transparent border border-black dark:border-white text-black dark:text-white rounded-full py-2 px-4 transition-all duration-300 ease-in-out hover:bg-green-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white" target="_blank">
-                <img src="images/modrinth-icon.png" alt="Modrinth Icon" class="w-5 h-5 object-contain" onerror="this.style.display='none';">
-                Modrinth
-            </a>
-        </nav>
-    </header>
+<body class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
-    <section class="projects flex justify-around py-10">
-        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
-            <a href="https://modrinth.com/modpack/superzekes-pvp" target="_blank">
-                <img src="images/superzekes-pvp-pack.png" alt="Project 1" class="w-full h-48 object-contain mx-auto mb-4">
-            </a>
-            <h2 class="text-xl mb-2">SuperZekes's PvP Pack</h2>
-            <p class="text-lg mb-4">A Minecraft modpack designed to be used with PvP - it also works well for multiplayer server use. Made for players and content creators.</p>
-            <div class="flex justify-center gap-2">
-                <a href="https://modrinth.com/modpack/superzekes-pvp" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Modrinth</a>
-                <a href="https://github.com/SuperZekes/SuperZekes-PvP-Pack" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
-            </div>
+    <!-- Navbar with Sticky Effect -->
+    <nav class="bg-gray-900 dark:bg-gray-700 p-4 sticky top-0 z-10 shadow-md">
+        <div class="container mx-auto flex justify-center space-x-8">
+            <a href="#about" class="text-white font-bold hover:text-gray-400 dark:hover:text-gray-300">About Me</a>
+            <a href="#projects" class="text-white font-bold hover:text-gray-400 dark:hover:text-gray-300">Projects</a>
+            <a href="#tools" class="text-white font-bold hover:text-gray-400 dark:hover:text-gray-300">Tools</a>
         </div>
-        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
-            <a href="https://modrinth.com/modpack/sodibanana" target="_blank">
-                <img src="images/sodibanana.png" alt="Project 2" class="w-full h-48 object-contain mx-auto mb-4">
-            </a>
-            <h2 class="text-xl mb-2">SodiBanana</h2>
-            <p class="text-lg mb-4">A modern optimization Modpack with a few QoL improvements and focus on stability.</p>
-            <div class="flex justify-center gap-2">
-                <a href="https://modrinth.com/modpack/sodibanana" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Modrinth</a>
-                <a href="https://github.com/SuperZekes/SodiBanana" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
-            </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-700">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-6">About Me</h1>
+            <img src="https://i.imgur.com/NWw77nx.png" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+                Hi, I'm SuperZekes. I'm a passionate developer from 
+                <span class="flag-tooltip">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Trinidad_and_Tobago.svg/2560px-Flag_of_Trinidad_and_Tobago.svg.png" 
+                         alt="Trinidad Flag" 
+                         class="inline w-[1.5em] h-[1em] cursor-pointer"> 
+                    <span class="tooltip-text">Trinidad and Tobago</span>
+                </span>. I love coding, problem-solving, and continuously learning new technologies to enhance my skill set.
+            </p>
         </div>
-        <div class="project-card bg-gray-200 dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transition-transform duration-300 ease-in-out transform hover:scale-105 w-1/3">
-            <a href="https://superzekes.itch.io/sinacraft" target="_blank">
-                <img src="images/sinacraft.png" alt="Project 3" class="w-full h-48 object-contain mx-auto mb-4">
-            </a>
-            <h2 class="text-xl mb-2">SinaCraft</h2>
-            <p class="text-lg mb-4">SinaCraft(Sena-Craft) is an open source voxel game based on Minecraft written in Python using the Ursina Engine.</p>
-            <div class="flex justify-center gap-2">
-                <a href="https://superzekes.itch.io/sinacraft" target="_blank" class="text-blue-800 hover:text-blue-400 underline">Itch.io</a>
-                <a href="https://github.com/SuperZekes/SinaCraft" target="_blank" class="text-blue-800 hover:text-blue-400 underline">GitHub</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-10">Projects</h1>
+            <div class="flex flex-wrap justify-center gap-10">
+                <!-- Project 1 -->
+                <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
+                    <img src="./images/SinaCraft_Logo.png" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">SinaCraft</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">An open-source voxel game based on Minecraft, written in Python using the Ursina Engine.</p>
+                    <a href="https://github.com/SuperZekes/SinaCraft" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
+                    <img src="./images/PyMath_Logo.png" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">PyMath</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A customizable Math Quiz great for learning or just practice.</p>
+                    <a href="https://github.com/SuperZekes/PyMath" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
+                    <img src="./images/TodoSH_Logo.png" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">TodoSH</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A Todo list program for Bash</p>
+                    <a href="https://github.com/SuperZekes/TodoSH" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    <footer class="text-center py-5 bg-white dark:bg-gray-800 shadow-md">
-        <p>&copy; 2024 SuperZekes. All rights reserved.</p>
-    </footer>
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-gradient-to-l from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-700">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-6">Tools</h1>
+            <div class="w-full max-w-md mx-auto bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Fraction to Pie Chart</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Enter a fraction like 3/4 and visualize it as a pie chart.</p>
+                <input type="text" id="fraction-input" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg mb-4 text-black" placeholder="Enter fraction (e.g., 3/4)">
+                <button onclick="generatePieChart()" class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-400">Generate Pie Chart</button>
+                
+                <!-- Pie Chart Canvas -->
+                <canvas id="pieChart" class="mt-6 mx-auto"></canvas>
+                <button onclick="clearPieChart()" class="w-full bg-red-500 text-white p-2 rounded-lg hover:bg-red-400 mt-4">Clear Chart</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="tools/piechart.js"></script>
+
 </body>
 </html>
