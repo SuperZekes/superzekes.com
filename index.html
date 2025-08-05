@@ -7,11 +7,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     :root {
-      color-scheme: light dark;
-      --bg-light: #f9f9f9;
-      --text-light: #111;
-      --bg-dark: #111;
-      --text-dark: #f9f9f9;
+      --bg-color: #111;
+      --text-color: #f9f9f9;
       --youtube-red: #ff0000;
       --twitter-blue: #1da1f2;
       --modrinth-green: #1bd96a;
@@ -21,21 +18,14 @@
     body {
       margin: 0;
       font-family: system-ui, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background-color 0.3s, color 0.3s;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       background-image: var(--bg-image);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: var(--bg-dark);
-        color: var(--text-dark);
-      }
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .container {
@@ -43,14 +33,8 @@
       margin: 0 auto;
       text-align: center;
       padding: 2rem;
-      background-color: rgba(255 255 255 / 0.8);
+      background-color: rgba(17, 17, 17, 0.8);
       border-radius: 1rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .container {
-        background-color: rgba(17 17 17 / 0.8);
-      }
     }
 
     .profile-pic {
@@ -84,7 +68,7 @@
     }
 
     .links a:hover {
-      color: var(--bg-light);
+      color: var(--bg-color);
     }
 
     .youtube:hover {
@@ -102,12 +86,6 @@
 
     .modrinth:hover {
       background-color: var(--modrinth-green);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .links a:hover {
-        color: var(--bg-dark);
-      }
     }
 
     .projects {
@@ -131,7 +109,7 @@
 
     .project:hover {
       transform: translateY(-5px);
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
     .project a {
