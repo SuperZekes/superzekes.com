@@ -1,219 +1,203 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SuperZekes' Site</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./src/output.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SuperZekes Profile</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
-    /* Modern styling */
+    :root {
+      color-scheme: light dark;
+      --bg-light: #f9f9f9;
+      --text-light: #111;
+      --bg-dark: #111;
+      --text-dark: #f9f9f9;
+      --youtube-red: #ff0000;
+      --twitter-blue: #1da1f2;
+      --modrinth-green: #1bd96a;
+      --bg-image: url('https://i.imgur.com/EeE9tr4.jpeg');
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    nav {
-      backdrop-filter: blur(10px);
-      transition: background-color 0.3s;
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
     }
 
-    nav a {
-      transition: color 0.3s ease-in-out;
-    }
-
-    .project-card {
-      border: 1px solid #e0e0e0;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .flag-tooltip {
-      position: relative;
-      display: inline-block;
-    }
-
-    .tooltip-text {
-      visibility: hidden;
-      width: 120px;
-      background-color: black;
-      color: #fff;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
+      padding: 2rem;
+      background-color: rgba(255 255 255 / 0.8);
+      border-radius: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .container {
+        background-color: rgba(17 17 17 / 0.8);
+      }
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid currentColor;
+      transition: background-color 0.3s, color 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .links i {
+      color: currentColor;
+      font-size: 1.2rem;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .links a:hover {
+      color: var(--bg-light);
+    }
+
+    .youtube:hover {
+      background-color: var(--youtube-red);
+    }
+
+    .twitter:hover {
+      background-color: var(--twitter-blue);
+    }
+
+    .github:hover {
+      background-color: #24292e;
+      color: white;
+    }
+
+    .modrinth:hover {
+      background-color: var(--modrinth-green);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .links a:hover {
+        color: var(--bg-dark);
+      }
+    }
+
+    .projects {
+      margin-top: 3rem;
+      padding: 2rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .project {
+      border: 1px solid currentColor;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: left;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .project a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
       transition: opacity 0.3s;
     }
 
-    .flag-tooltip:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
+    .project img:hover {
+      opacity: 0.85;
     }
-
-    /* Light Mode */
-    nav {
-      background-color: rgba(247, 250, 252, 0.9);
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    #about, #tools {
-      background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
-    }
-
-    /* Dark Mode */
-    .dark nav {
-      background-color: rgba(31, 41, 55, 0.8);
-      border-bottom: 1px solid #4a5568;
-    }
-
-    .dark #about, .dark #tools {
-      background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
-    }
-
-    .bg-white {
-      background-color: #ffffff;
-    }
-
-    .dark .bg-white {
-      background-color: #1f2937;
-    }
-
-    .text-gray-900 {
-      color: #1a202c;
-    }
-
-    .dark .text-gray-900 {
-      color: #f9fafb;
-    }
-
-    .text-gray-600 {
-      color: #718096;
-    }
-
-    .dark .text-gray-600 {
-      color: #d1d5db;
-    }
-
-    .border-gray-300 {
-      border-color: #e2e8f0;
-    }
-
-    .dark .border-gray-300 {
-      border-color: #4b5563;
-    }
-
   </style>
-
-  <script>
-    function applySystemTheme() {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Check localStorage first
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (storedTheme === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else {
-        applySystemTheme();
-      }
-
-      // Listen for system changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applySystemTheme);
-    });
-  </script>
 </head>
-
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-
-  <nav class="p-4 sticky top-0 z-10 shadow-md">
-    <div class="container mx-auto flex justify-center space-x-8">
-      <a href="#about" class="text-white font-semibold hover:text-gray-300 dark:hover:text-gray-400">About Me</a>
-      <a href="#projects" class="text-white font-semibold hover:text-gray-300 dark:hover:text-gray-400">Projects</a>
-      <a href="#tools" class="text-white font-semibold hover:text-gray-300 dark:hover:text-gray-400">Tools</a>
+<body>
+  <div class="container">
+    <img src="images/profile.png" alt="Profile Picture" class="profile-pic" />
+    <h1>SuperZekes</h1>
+    <p>Hi! I'm SuperZekes. I really like playing video games (who doesn't) and developing cool projects using Python, HTML/CSS/JAVASCRIPT, and Java.</p>
+    <div class="links">
+      <a href="https://youtube.com/@SuperZekesYT" target="_blank" class="youtube" rel="noopener noreferrer">
+        <i class="fab fa-youtube" aria-hidden="true"></i><span>YouTube</span>
+      </a>
+      <a href="https://twitter.com/@SuperZekesYT" target="_blank" class="twitter" rel="noopener noreferrer">
+        <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter</span>
+      </a>
+      <a href="https://github.com/SuperZekes" target="_blank" class="github" rel="noopener noreferrer">
+        <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
+      </a>
+      <a href="https://modrinth.com/user/SuperZekes" target="_blank" class="modrinth" rel="noopener noreferrer">
+        <i class="fas fa-cube" aria-hidden="true"></i><span>Modrinth</span>
+      </a>
     </div>
-  </nav>
 
-  <section id="about" class="py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-6">About Me</h1>
-      <img src="./images/Profile Picture.png" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
-      <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-        Hi, I'm SuperZekes. I'm a passionate developer from 
-        <span class="flag-tooltip">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Trinidad_and_Tobago.svg/2560px-Flag_of_Trinidad_and_Tobago.svg.png" 
-               alt="Trinidad Flag" 
-               class="inline w-[1.5em] h-[1em] cursor-pointer">
-          <span class="tooltip-text">Trinidad and Tobago</span>
-        </span>. I love coding, problem-solving, and continuously learning new technologies.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects" class="py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-10">Projects</h1>
-      <div class="flex flex-wrap justify-center gap-10">
-        <!-- Project Cards -->
-        <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
-          <img src="./images/SinaCraft_Logo.png" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
-          <h2 class="text-xl font-semibold mb-4">SinaCraft</h2>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">An open-source voxel game written in Python using Ursina Engine.</p>
-          <a href="https://github.com/SuperZekes/SinaCraft" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+    <div class="projects">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project">
+          <a href="https://modrinth.com/mod/your-modrinth-logo-mod" target="_blank">
+            <img src="https://cdn.modrinth.com/data/OW6NgXk1/d272f4c87ddebf8933118f54735ffdf117255226_96.webp" alt="Modrinth Logo Mod">
+            <h3>Modrinth Logo Mod</h3>
+          </a>
+          <p>A simple mod that adds the Modrinth logo as an item in Minecraft!</p>
         </div>
-        <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
-          <img src="./images/PyMath_Logo.png" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4">
-          <h2 class="text-xl font-semibold mb-4">PyMath</h2>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">A customizable math quiz for learning or practice.</p>
-          <a href="https://github.com/SuperZekes/PyMath" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+        <div class="project">
+          <a href="https://github.com/SuperZekes/PyMath" target="_blank">
+            <img src="https://raw.githubusercontent.com/SuperZekes/PyMath/main/PyMath_Logo.png" alt="PyMath">
+            <h3>PyMath</h3>
+          </a>
+          <p>A customizable Math Quiz great for learning or just practice.</p>
         </div>
-        <div class="w-80 bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg project-card">
-          <img src="./images/TodoSH_Logo.png" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
-          <h2 class="text-xl font-semibold mb-4">TodoSH</h2>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">A simple Todo list for Bash users.</p>
-          <a href="https://github.com/SuperZekes/TodoSH" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
+        <div class="project">
+          <a href="https://superzekes.itch.io/sinacraft" target="_blank">
+            <img src="https://img.itch.zone/aW1nLzE3MDcwMTI3LnBuZw==/original/uZzmyc.png" alt="SinaCraft">
+            <h3>SinaCraft</h3>
+          </a>
+          <p>A voxel game written in Python using the Ursina Engine.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="tools" class="py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-semibold text-black-500 dark:text-white-300 mb-6">Tools</h1>
-      <div class="w-full max-w-md mx-auto bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-        <h2 class="text-xl font-semibold mb-4">Fraction to Pie Chart</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Enter a fraction like 3/4 to visualize it as a pie chart.</p>
-        <input id="fraction-input" type="text" class="w-full p-2 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg text-black dark:text-white" placeholder="Enter fraction (e.g., 3/4)">
-        <button onclick="generatePieChart()" class="w-full bg-blue-500 hover:bg-blue-400 text-white p-2 rounded-lg">Generate Pie Chart</button>
-
-        <canvas id="pieChart" class="mt-6"></canvas>
-        
-        <button onclick="clearPieChart()" class="w-full bg-red-500 hover:bg-red-400 text-white p-2 rounded-lg mt-4">Clear Chart</button>
-      </div>
-    </div>
-  </section>
-
-  <script src="tools/piechart.js"></script>
-
+  </div>
 </body>
 </html>
